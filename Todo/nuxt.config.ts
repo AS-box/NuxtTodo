@@ -8,4 +8,7 @@ export default defineNuxtConfig({
   nitro:{
     preset: 'vercel', 
   },
+  routeRules:{
+    '/':{ssr:true},
+  }
 })
