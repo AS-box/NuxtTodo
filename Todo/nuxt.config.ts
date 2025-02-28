@@ -5,7 +5,4 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["@/assets/css/tailwind.css"],
   modules: ['@nuxt/icon'],
-  nitro:{
-    preset:'vercel',
-  }
 })
