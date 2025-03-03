@@ -37,8 +37,10 @@
 
 <script setup lang="ts">
 import '@/assets/css/output/tailwind.css'
+import { getTasks } from '~/composables/api/getTasks';
 //タスク一覧を取得
-const { data:tasks , refresh} =  useFetch('/api/task');
+const tasks = getTasks();
+// const { data:tasks , refresh} =  useFetch('/api/task');
 //タスク追加
 interface Task {
     title: string;
