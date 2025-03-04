@@ -18,6 +18,6 @@ export default defineNuxtConfig({
     preset: 'vercel', 
   },
   routeRules:{
-    '/':{ssr:true},
+    '/':{ssr:true}
   }
 })
