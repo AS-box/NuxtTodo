@@ -1,0 +1,1 @@
+import{F as r}from"./C0fZ62Zg.js";import{v as s,z as n,x as a,t as m}from"./DJNiLHon.js";const i={method:"post"},_={__name:"login",setup(l){return(o,e)=>(m(),s("form",i,[n(r),a("button",{onClick:e[0]||(e[0]=(...t)=>o.login&&o.login(...t))},"ログイン")]))}};export{_ as default};
