@@ -5,6 +5,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["@/assets/css/tailwind.css"],
   modules: ['@nuxt/icon'],
+  plugins: [
+    '~/composables/api/spabase.ts'
+  ],
+  runtimeConfig: {
+    public: {
+      SUPABASE_URL: process.env.NUXT_PUBLIC_SUPABASE_URL,
+      SUPABASE_KEY: process.env.NUXT_PUBLIC_SUPABASE_KEY,
+    }
+  },
   nitro:{
     preset: 'vercel', 
   },

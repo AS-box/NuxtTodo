@@ -1,12 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+import { SupabaseClient } from "@supabase/supabase-js";
 
-export default defineEventHandler(async (event) => {
-    const prisma = new PrismaClient();
-    const body = await readBody(event);
-    const deleteTask = await prisma.task.delete({
-        where:{
-            id: parseInt(body.id)
-        }
-    });
-    return deleteTask;
-});
+export const deleteTask = async (id: number) => {
+    const nuxtApp = useNuxtApp();
+    const supabase = nuxtApp.$supabase as SupabaseClient;
+    const { data, error } = await supabase.from("tasks").delete().eq("id", id)
+    return { data, error };
+};

@@ -1,18 +1,13 @@
-import { PrismaClient } from "@prisma/client";
+import { SupabaseClient } from "@supabase/supabase-js";
 
-export default defineEventHandler(async (event) => {
-    const prisma = new PrismaClient();
-    const body = await readBody(event);
-    let tasks;
-    if(body.sort === '4'){
-        tasks = await prisma.task.findMany();
+export const sortTasks = (async (status:string) => {
+    const nuxtApp = useNuxtApp();
+    const supabase = nuxtApp.$supabase as SupabaseClient;
+    if(status === '4'){
+        const { data, error } = await supabase.from("tasks").select("*");
+        return { data, error };
     }else{
-        tasks = await prisma.task.findMany({
-            where:{
-                status: body.sort
-            }
-        });
+        const { data, error } = await supabase.from("tasks").select("*").eq("status", status);
+        return { data, error };
     }
-    console.log(tasks);
-    return tasks;
 });
