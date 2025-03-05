@@ -42,6 +42,10 @@ import { addTasks } from '@/composables/api/addTasks';
 import { deleteTask } from '@/composables/api/deleteTask';
 import { changeTask } from '@/composables/api/changeTask';
 import { sortTasks } from '@/composables/api/sortTasks';
+
+const env = useRuntimeConfig();
+console.log(env.env)
+
 //タスク追加
 interface Task {
     id?: number;
