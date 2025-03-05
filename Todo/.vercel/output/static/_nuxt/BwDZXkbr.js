@@ -1,1 +1,0 @@
-import{_ as l,t as n,v as r,x as t,X as s}from"./DJNiLHon.js";const a={};function d(o,e){return n(),r("div",null,[e[0]||(e[0]=t("header",null,"田中のtodo",-1)),t("main",null,[s(o.$slots,"default")]),e[1]||(e[1]=t("footer",null,"フッター",-1))])}const u=l(a,[["render",d]]);export{u as default};

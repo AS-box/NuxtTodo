@@ -1,1 +1,0 @@
-import{F as s}from"./C0fZ62Zg.js";import{v as r,z as n,x as a,t as p}from"./DJNiLHon.js";const m={method:"post"},_={__name:"signup",setup(i){return(o,e)=>(p(),r("form",m,[n(s),a("button",{onClick:e[0]||(e[0]=(...t)=>o.signup&&o.signup(...t))},"登録")]))}};export{_ as default};
