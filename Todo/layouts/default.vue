@@ -1,9 +1,8 @@
 <template>
     <div>
-        <header>田中のtodo</header>
         <main>
             <slot />
         </main>
-        <footer>フッター</footer>
+        <footer class="text-center">フッター</footer>
     </div>
 </template>

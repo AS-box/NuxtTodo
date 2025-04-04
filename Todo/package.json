@@ -4,10 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev && watch",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare", 
+    "watch":"npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/output/tailwind.css --watch"
   },
   "dependencies": {
     "@prisma/client": "^6.3.0",

@@ -1,6 +1,6 @@
 <template>
-    <div class="p-2 text-center">
-        <h1>タスク一覧</h1>
+    <div class="p-2 text-center md:w-[50%] mx-auto text-gray-800">
+        <h1 class="text-lg">TODO</h1>
         <form @submit.prevent="clickAddTask(task.title)" class="flex">
             <input class="input-text-primary w-4/5 mr-0.5" type="text" v-model="task.title"/>
             <button type="submit" class="btn-primary w-1/5">追加</button>
@@ -12,14 +12,13 @@
             <option value="2">完了</option>
             <option value="3">放置</option>
         </select>
-        <table>
-            <thead><tr><th>id</th><th>タスク</th><th>ステータス</th></tr></thead>
+        <table class="table-auto w-full rounded-t-md overflow-hidden">
+            <thead class="font-bold"><tr class="bg-gray-600 text-white h-10"><th class="text-left pl-5">タスク</th><th class="text-center">ステータス</th><th></th></tr></thead>
             <tbody>
-                <tr v-for="task in tasks" :key="task.id">
-                    <td>{{ task.id }}</td>
-                    <td><input type="text" v-model="task.title" @change="changeHandlerTask(task.id, task.title, task.status)"></td>
-                    <td class="bg-blue-500"> 
-                        <select name="status" id="status" v-model="task.status" @change="changeHandlerTask(task.id, task.title, task.status)">
+                <tr v-for="task in tasks" :key="task.id" class="odd:bg-white even:bg-slate-100 font-normal">
+                    <td class="pl-5"><input class="bg-transparent w-full h-full" type="text" v-model="task.title" @change="changeHandlerTask(task.id, task.title, task.status)"></td>
+                    <td> 
+                        <select class="bg-transparent" name="status" id="status" v-model="task.status" @change="changeHandlerTask(task.id, task.title, task.status)">
                             <option value="0">未着手</option>
                             <option value="1">作業中</option>
                             <option value="2">完了</option>
@@ -27,7 +26,7 @@
                         </select>
                     </td>
                     <!-- <td v-if="task.completed ">完了</td><td v-else>作業中</td> -->
-                    <td><button type="button" @click="() => clickDeleteTask(task.id)"><Icon name="tabler:trash-x" size="2em" /></button></td>
+                    <td class="w-15"><button type="button" @click="() => clickDeleteTask(task.id)"><Icon name="tabler:trash-x" size="2em" /></button></td>
                 </tr>
             </tbody>
         </table>
